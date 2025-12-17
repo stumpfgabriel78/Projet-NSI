@@ -1,3 +1,4 @@
+from arbre import inserer, inserer_recursive
 #test
 myTree = ABR()
 myTree.enfant = familyMember("Ethan","Durvin","13/09/2008")
