@@ -8,12 +8,12 @@ class Node:
 class ABR:
     def __init__(self):
         self.enfant = None
-    
+
     def inserer(self):
         if self.enfant == None:
             valeur = input("quel est votre nom")
             self.enfant = Node(valeur)
-            return("recommencer pour completer arbre")
+            return(print("recommencer pour completer arbre"))
 
         else:
             self.MP = input("voulez vous aller du côté de votre Mere ou Pere ?")
@@ -25,16 +25,16 @@ class ABR:
                 pere = input("nom de votre pere")
                 self.inserer_recursive(self.enfant,pere)
 
-    
+
     def inserer_recursive(self, noeud, valeur):
         if self.MP == "Pere":
-            noeud.pere = node(valeur)
+            noeud.pere = Node(valeur)
 
             continuer = input("voulez vous continuer OUI/NON")
 
             if continuer == "OUI":
 
-                self.MP = input("voulez vous aller du côté de votre Mere ou Pere ?")
+                self.MP = input("voulez vous aller du côté de sa Mere ou son Pere ?")
 
                 if self.MP == "Mere":
                     mere = input("nom de sa mere")
@@ -45,19 +45,19 @@ class ABR:
                     pere = input("nom de son pere")
                     noeud = noeud.mere
                     self.inserer_recursive(noeud.pere,pere)
-            
+
             else:
-                return("fin arbre genealogique")
+                return(print("fin arbre genealogique"))
 
         elif self.MP == "Mere":
 
-            noeud.mere = node(valeur)
+            noeud.mere = Node(valeur)
 
             continuer = input("voulez vous continuer OUI/NON")
 
             if continuer == "OUI":
 
-                self.MP = input("voulez vous aller du côté de votre Mere ou Pere ?")
+                self.MP = input("voulez vous aller du côté de sa Mere ou son Pere ?")
 
                 if self.MP == "Mere":
                     mere = input("nom de sa mere")
@@ -68,13 +68,15 @@ class ABR:
                     pere = input("nom de son pere")
                     noeud = noeud.mere
                     self.inserer_recursive(noeud.pere,pere)
-            
+
             else:
-                return("fin arbre genealogique")
+                return(print("fin arbre genealogique"))
+
+af = ABR()
+af.inserer()
+af.inserer()
 
 
-        
-         
 
 
 
