@@ -5,13 +5,14 @@ class testMethode():
         self.arbre=ABR()
 
     def addFamilyMember(self):
-        self.arbre.addFamilyMember("GS")
+        AssertIs(self.arbre.addFamilyMemberPartie1("GS"), "GS")
 
     def search(self):
-        self.arbre.search("GS")
+        self.arbre.addFamilyMemberPartie1("GS")
+        AssertIs(self.arbre.addFamilyMemberPartie1("LS", "mere"), "LS")
     
     def print_tree(self):
-        self.arbre.print_tree()
+        AssertIsNotNone(self.arbre.print_tree())
 
 
 if __name__ == "__main__":
